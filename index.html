@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>یادبود چهلمین روز درگذشت مادر گرامی</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #121316;
+      --card-bg: #1c1d22;
+      --accent: #c5a059;
+      --text: #e0e0e0;
+      --muted: #9aa0a6;
+      --border: #2e3038;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Vazirmatn', Tahoma, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 24px 16px;
+      line-height: 1.8;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      max-width: 520px;
+      width: 100%;
+      padding: 40px 28px;
+      text-align: center;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      border: 1px solid rgba(197, 160, 89, 0.2);
+      border-radius: 12px;
+      pointer-events: none;
+    }
+
+    .header-tag {
+      font-size: 0.9rem;
+      color: var(--accent);
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      font-weight: 300;
+    }
+
+    .guest-name {
+      font-size: 1.35rem;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .poem {
+      font-style: italic;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+      line-height: 2;
+    }
+
+    .invitation-text {
+      font-size: 1.02rem;
+      color: var(--text);
+      margin-bottom: 32px;
+      text-align: justify;
+      text-align-last: center;
+    }
+
+    .details-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 28px;
+      text-align: right;
+    }
+
+    .detail-row {
+      display: flex;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+    }
+
+    .detail-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .detail-label {
+      min-width: 75px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .detail-value {
+      color: #f1f1f1;
+    }
+
+    .map-btn {
+      display: inline-block;
+      width: 100%;
+      background: var(--accent);
+      color: #121316;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: opacity 0.2s;
+    }
+
+    .map-btn:hover {
+      opacity: 0.9;
+    }
+
+    .footer-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="card">
+    <div class="header-tag">هوالباقی</div>
+
+    <div class="guest-name" id="guestName">مهمان گرامی</div>
+
+    <div class="poem">
+      چهل روز است که روی ماه مادر را ندیدیم<br>
+      به جز اندوه و ماتم از جهان خیری ندیدیم
+    </div>
+
+    <p class="invitation-text">
+      با قلبی آکنده از اندوه و رضا به مشیت الهی، چهلمین روز غروب غم‌انگیز مادر عزیزمان را به سوگ می‌نشینیم. حضور پرمهر شما و همراهی در قرائت فاتحه، موجب تسلی دل بازماندگان و شادی روح آن عزیز سفرکرده خواهد بود.
+    </p>
+
+    <div class="details-box">
+      <div class="detail-row">
+        <span class="detail-label">زمان:</span>
+        <span class="detail-value">[روز هفته]، [تاریخ مثلاً ۲۵ مهر ۱۴۰۵] — از ساعت [۱۶:۰۰ الی ۱۸:۰۰]</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">مکان:</span>
+        <span class="detail-value">[نام مسجد، تالار یا آرامستان]</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">آدرس:</span>
+        <span class="detail-value">[تهران، خیابان ...، پلاک ...]</span>
+      </div>
+    </div>
+
+    <!-- لینک نقشه گوگل برای مسیریابی آسان مهمانان -->
+    <a href="https://maps.google.com" target="_blank" class="map-btn">مسیریابی با نقشه</a>
+
+    <div class="footer-note">از طرف خانواده‌های داغدار</div>
+  </main>
+
+  <script>
+    // خواندن پارامتر name از آدرس صفحه
+    const params = new URLSearchParams(window.location.search);
+    const guest = params.get('name');
+
+    if (guest && guest.trim() !== '') {
+      document.getElementById('guestName').textContent = decodeURIComponent(guest);
+    }
+  </script>
+</body>
+</html>
