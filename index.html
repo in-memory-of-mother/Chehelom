@@ -104,7 +104,7 @@
       border: 2px solid #1a1b20;
     }
 
-    /* روبان یادبود */
+    /* روبان یادبود مشکی */
     .ribbon {
       position: absolute;
       top: 2px;
@@ -275,7 +275,7 @@
   <div class="card-container">
     <div class="top-ornament">هوالباقی</div>
 
-    <!-- قاب عکس مادر با نام دقیق فایل -->
+    <!-- قاب عکس مادر -->
     <div class="photo-frame-wrapper">
       <div class="photo-frame">
         <img src="Mother.jpg" alt="شادروان معصومه ابراهیمی" class="mother-photo">
@@ -329,12 +329,12 @@
       </div>
     </div>
 
-    <!-- دکمه‌های مسیریابی -->
+    <!-- دکمه‌های مسیریابی دقیق -->
     <div class="nav-buttons-row">
       <a href="https://neshan.org/maps/places/c7f5f02df138e229fdd02693e37e081e" target="_blank" class="btn">
         📍 مسیریابی در نشان / بلد
       </a>
-      <a href="https://maps.google.com/?q=35.7265,51.2385" target="_blank" class="btn">
+      <a href="https://maps.google.com/?q=P69W%2B23F+Tehran+Iran" target="_blank" class="btn">
         🗺️ گوگل مپ
       </a>
     </div>
@@ -345,11 +345,12 @@
   </div>
 
   <script>
-    // دریافت نام مهمان از انتهای لینک
+    // تنظیم نام مهمان از انتهای لینک
     const urlParams = new URLSearchParams(window.location.search);
     const guestParam = urlParams.get('name');
     if (guestParam && guestParam.trim() !== '') {
-      document.getElementById('guestName').textContent = decodeURIComponent(guestParam);
+      // تبدیل + به فاصله و نمایش نام
+      document.getElementById('guestName').textContent = decodeURIComponent(guestParam.replace(/\+/g, ' '));
     }
   </script>
 </body>
