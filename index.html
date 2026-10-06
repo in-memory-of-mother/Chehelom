@@ -6,15 +6,17 @@
   <title>یادبود چهلمین روز درگذشت مادر گرامی</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #121316;
-      --card-bg: #1c1d22;
-      --accent: #c5a059;
-      --text: #e0e0e0;
-      --muted: #9aa0a6;
-      --border: #2e3038;
+      --bg: #0c0d0f;
+      --card-gradient: linear-gradient(165deg, #1c1d24 0%, #121318 100%);
+      --accent: #d4af37;
+      --accent-soft: rgba(212, 175, 55, 0.15);
+      --accent-glow: rgba(212, 175, 55, 0.35);
+      --text: #edeef0;
+      --muted: #a1a4b2;
+      --border: rgba(212, 175, 55, 0.25);
     }
 
     * {
@@ -25,170 +27,309 @@
 
     body {
       font-family: 'Vazirmatn', Tahoma, sans-serif;
-      background-color: var(--bg);
+      background: var(--bg);
+      background-image: 
+        radial-gradient(circle at 50% 10%, rgba(212, 175, 55, 0.08) 0%, transparent 60%),
+        radial-gradient(circle at 50% 90%, rgba(20, 21, 26, 0.9) 0%, transparent 60%);
       color: var(--text);
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 24px 16px;
-      line-height: 1.8;
+      padding: 30px 16px;
+      line-height: 1.9;
     }
 
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      max-width: 520px;
-      width: 100%;
-      padding: 40px 28px;
-      text-align: center;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    .card-container {
       position: relative;
+      max-width: 500px;
+      width: 100%;
+      background: var(--card-gradient);
+      border-radius: 20px;
+      padding: 42px 28px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 25px rgba(212, 175, 55, 0.05);
+      border: 1px solid var(--border);
+      animation: fadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .card::before {
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* حاشیه داخلی ظریف */
+    .card-container::before {
       content: "";
       position: absolute;
       top: 10px;
       bottom: 10px;
       left: 10px;
       right: 10px;
-      border: 1px solid rgba(197, 160, 89, 0.2);
-      border-radius: 12px;
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      border-radius: 14px;
       pointer-events: none;
     }
 
-    .header-tag {
-      font-size: 0.9rem;
+    .top-ornament {
+      display: inline-block;
       color: var(--accent);
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-      font-weight: 300;
+      font-size: 1.25rem;
+      letter-spacing: 2px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      text-shadow: 0 0 10px var(--accent-glow);
     }
 
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 12px auto 22px auto;
+      width: 65%;
+      opacity: 0.6;
+    }
+    .divider::before, .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--accent), transparent);
+    }
+    .divider span {
+      color: var(--accent);
+      font-size: 0.8rem;
+    }
+
+    /* نام مهمان */
+    .guest-badge {
+      background: var(--accent-soft);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 10px 22px;
+      border-radius: 50px;
+      display: inline-block;
+      margin-bottom: 24px;
+    }
     .guest-name {
-      font-size: 1.35rem;
+      font-size: 1.25rem;
       color: #fff;
       font-weight: 700;
-      margin-bottom: 24px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--border);
     }
 
     .poem {
       font-style: italic;
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 24px;
-      line-height: 2;
+      color: #c9cbcf;
+      font-size: 0.98rem;
+      margin-bottom: 22px;
+      line-height: 2.1;
+      background: rgba(255, 255, 255, 0.02);
+      padding: 14px 10px;
+      border-radius: 12px;
+      border-right: 3px solid var(--accent);
+      border-left: 3px solid var(--accent);
     }
 
     .invitation-text {
-      font-size: 1.02rem;
+      font-size: 0.98rem;
       color: var(--text);
-      margin-bottom: 32px;
+      margin-bottom: 26px;
       text-align: justify;
       text-align-last: center;
+      font-weight: 300;
     }
 
-    .details-box {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 28px;
+    /* باکس مشخصات مراسم */
+    .details-card {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin-bottom: 26px;
       text-align: right;
     }
-
-    .detail-row {
+    .detail-item {
       display: flex;
-      margin-bottom: 12px;
-      font-size: 0.95rem;
+      align-items: flex-start;
+      margin-bottom: 14px;
+      font-size: 0.94rem;
     }
-
-    .detail-row:last-child {
+    .detail-item:last-child {
       margin-bottom: 0;
     }
 
-    .detail-label {
-      min-width: 75px;
+    .icon-box {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 10px;
       color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .detail-content {
+      flex: 1;
+    }
+
+    .detail-title {
       font-weight: 600;
+      color: var(--accent);
+      margin-left: 4px;
     }
 
-    .detail-value {
-      color: #f1f1f1;
+    .detail-desc {
+      color: #f5f5f5;
     }
 
-    .map-btn {
-      display: inline-block;
-      width: 100%;
-      background: var(--accent);
-      color: #121316;
+    /* دکمه‌های اکشن */
+    .actions-grid {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .btn {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #d4af37 0%, #b88f28 100%);
+      color: #0d0e11;
       text-decoration: none;
-      padding: 12px 20px;
-      border-radius: 8px;
+      padding: 13px 14px;
+      border-radius: 10px;
       font-weight: 700;
-      font-size: 0.95rem;
-      transition: opacity 0.2s;
+      font-size: 0.92rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+      filter: brightness(1.08);
     }
 
-    .map-btn:hover {
-      opacity: 0.9;
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: #e5e5e5;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: none;
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      box-shadow: none;
     }
 
-    .footer-note {
+    .salawat-counter {
+      margin-top: 16px;
       font-size: 0.85rem;
       color: var(--muted);
-      margin-top: 24px;
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.2s;
+    }
+    .salawat-counter:hover {
+      color: var(--accent);
+    }
+
+    .footer-signature {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-top: 26px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 16px;
     }
   </style>
 </head>
 <body>
 
-  <main class="card">
-    <div class="header-tag">هوالباقی</div>
+  <div class="card-container">
+    <div class="top-ornament">هوالباقی</div>
 
-    <div class="guest-name" id="guestName">مهمان گرامی</div>
+    <div class="divider">
+      <span>✦</span>
+    </div>
+
+    <!-- بخش نام مهمان که با آدرس لینک تغییر می‌کند -->
+    <div class="guest-badge">
+      <span class="guest-name" id="guestName">مهمان گرامی</span>
+    </div>
 
     <div class="poem">
-      چهل روز است که روی ماه مادر را ندیدیم<br>
-      به جز اندوه و ماتم از جهان خیری ندیدیم
+      چهل روز است خاموش است نورت در بر ما<br>
+      به قربان صفایت، روح پاکت، ای مادر ما
     </div>
 
     <p class="invitation-text">
-      با قلبی آکنده از اندوه و رضا به مشیت الهی، چهلمین روز غروب غم‌انگیز مادر عزیزمان را به سوگ می‌نشینیم. حضور پرمهر شما و همراهی در قرائت فاتحه، موجب تسلی دل بازماندگان و شادی روح آن عزیز سفرکرده خواهد بود.
+      با قلبی آکنده از غم و اندوه، چهلمین روز غروب غم‌انگیز مادر فداکار و مهربانمان را به سوگ می‌نشینیم. تشریف‌فرمایی شما سروران گرامی و قرائت فاتحه، موجب شادی روح آن مرحومه و تسلی خاطر بازماندگان خواهد بود.
     </p>
 
-    <div class="details-box">
-      <div class="detail-row">
-        <span class="detail-label">زمان:</span>
-        <span class="detail-value">[روز هفته]، [تاریخ مثلاً ۲۵ مهر ۱۴۰۵] — از ساعت [۱۶:۰۰ الی ۱۸:۰۰]</span>
+    <!-- اطلاعات زمان و مکان -->
+    <div class="details-card">
+      <div class="detail-item">
+        <div class="icon-box">📅</div>
+        <div class="detail-content">
+          <span class="detail-title">زمان:</span>
+          <span class="detail-desc" id="eventDate">[روز هفته]، [مثلاً ۲۵ مهر ۱۴۰۵] — ساعت [۱۵:۳۰ الی ۱۷:۰۰]</span>
+        </div>
       </div>
-      <div class="detail-row">
-        <span class="detail-label">مکان:</span>
-        <span class="detail-value">[نام مسجد، تالار یا آرامستان]</span>
+      <div class="detail-item">
+        <div class="icon-box">🕌</div>
+        <div class="detail-content">
+          <span class="detail-title">مکان:</span>
+          <span class="detail-desc" id="eventLocation">[نام مسجد، تالار یا آرامستان]</span>
+        </div>
       </div>
-      <div class="detail-row">
-        <span class="detail-label">آدرس:</span>
-        <span class="detail-value">[تهران، خیابان ...، پلاک ...]</span>
+      <div class="detail-item">
+        <div class="icon-box">📍</div>
+        <div class="detail-content">
+          <span class="detail-title">آدرس:</span>
+          <span class="detail-desc" id="eventAddress">[آدرس کامل محل برگزاری]</span>
+        </div>
       </div>
     </div>
 
-    <!-- لینک نقشه گوگل برای مسیریابی آسان مهمانان -->
-    <a href="https://maps.google.com" target="_blank" class="map-btn">مسیریابی با نقشه</a>
+    <!-- دکمه‌های کاربردی -->
+    <div class="actions-grid">
+      <!-- برای فعال شدن نقشه، لینک لوکیشن گوگل یا نشان را به جای # بگذارید -->
+      <a href="https://maps.google.com" target="_blank" class="btn" id="mapLink">
+        📍 مسیریابی محل مراسم
+      </a>
+      <button class="btn btn-secondary" onclick="sendSalawat()">
+        🌸 قرائت صلوات و فاتحه
+      </button>
+    </div>
+    <div class="salawat-counter" id="salawatText" onclick="sendSalawat()">
+      ذکر صلوات‌های هدیه شده: <b id="salawatCount" style="color: var(--accent);">۱</b>
+    </div>
 
-    <div class="footer-note">از طرف خانواده‌های داغدار</div>
-  </main>
+    <div class="footer-signature">
+      از طرف خانواده‌های داغدار و بازماندگان
+    </div>
+  </div>
 
   <script>
-    // خواندن پارامتر name از آدرس صفحه
-    const params = new URLSearchParams(window.location.search);
-    const guest = params.get('name');
+    // تنظیم نام مهمان از انتهای لینک (?name=...)
+    const urlParams = new URLSearchParams(window.location.search);
+    const guestParam = urlParams.get('name');
+    if (guestParam && guestParam.trim() !== '') {
+      document.getElementById('guestName').textContent = decodeURIComponent(guestParam);
+    }
 
-    if (guest && guest.trim() !== '') {
-      document.getElementById('guestName').textContent = decodeURIComponent(guest);
+    // شمارنده صلوات نمادین و تعاملی برای مهمانان
+    let count = parseInt(localStorage.getItem('salawat_count') || '1');
+    document.getElementById('salawatCount').textContent = count;
+
+    function sendSalawat() {
+      count++;
+      localStorage.setItem('salawat_count', count);
+      document.getElementById('salawatCount').textContent = count;
+      alert('صلوات و فاتحه شما ثبت و نثار روح مادر مهربانمان گردید. أجرکم عندالله.');
     }
   </script>
 </body>
