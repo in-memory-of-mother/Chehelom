@@ -329,12 +329,13 @@
       </div>
     </div>
 
-    <!-- دکمه‌های مسیریابی دقیق -->
+    <!-- دکمه‌های مسیریابی با لینک دقیق -->
     <div class="nav-buttons-row">
       <a href="https://neshan.org/maps/places/c7f5f02df138e229fdd02693e37e081e" target="_blank" class="btn">
         📍 مسیریابی در نشان / بلد
       </a>
-      <a href="https://maps.google.com/?q=P69W%2B23F+Tehran+Iran" target="_blank" class="btn">
+      <!-- استفاده از لینک مستقیم ارسالی شما -->
+      <a href="https://maps.app.goo.gl/VdiGXWAAgHP7diGAA?g_st=ac" target="_blank" class="btn">
         🗺️ گوگل مپ
       </a>
     </div>
@@ -349,8 +350,7 @@
     const urlParams = new URLSearchParams(window.location.search);
     const guestParam = urlParams.get('name');
     if (guestParam && guestParam.trim() !== '') {
-      // تبدیل + به فاصله و نمایش نام
-      document.getElementById('guestName').textContent = decodeURIComponent(guestParam.replace(/\+/g, ' '));
+      document.getElementById('guestName').textContent = decodeURIComponent(guestParam);
     }
   </script>
 </body>
